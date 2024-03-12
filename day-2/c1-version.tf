@@ -15,20 +15,32 @@ provider "aws" {
   profile = "default"
 }
 
-# Resource: Security Group
-resource "aws_security_group" "http_sg" {
-  name        = "http_security_group"
-  description = "Allow HTTP traffic"
-  
+# Create Security Group - Web Traffic
+resource "aws_security_group" "vpc-web" {
+  name        = "vpc-web"
+  description = "VPC web"
   ingress {
+    description = "Allow Port 80"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # Allow traffic from anywhere
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name = "HTTP Security Group"
+  ingress {
+    description = "Allow Port 443"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    description = "Allow all ip and ports outbound"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
@@ -40,5 +52,5 @@ resource "aws_instance" "day2_ec2" {
   tags = {
     "Name" = "EC2 Demo"
   }
-  security_groups = [aws_security_group.http_sg.name] # Attach the security group to the instance
+  vpc_security_group_ids = [ aws_security_group.vpc-web.id ]
 }
