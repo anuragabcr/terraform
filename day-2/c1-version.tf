@@ -36,5 +36,5 @@ resource "aws_instance" "day2_ec2" {
   tags = {
     "Name" = "EC2 Demo"
   }
-  vpc_security_group_ids = [ aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id ]
+  vpc_security_group_ids = [ aws_security_group.vpc-web.id ]
 }
