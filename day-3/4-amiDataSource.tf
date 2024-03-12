@@ -5,7 +5,7 @@ data "aws_ami" "amzLinux2" {
 
   filter {
     name = "virtualization-type"
-    values = [ "htv" ]
+    values = [ "hvm" ]
   }
 
   filter {
