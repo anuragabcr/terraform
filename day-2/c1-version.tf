@@ -19,7 +19,6 @@ provider "aws" {
 resource "aws_security_group" "http_sg" {
   name        = "http_security_group"
   description = "Allow HTTP traffic"
-  vpc_id = aws_vpc.main.id
   
   ingress {
     from_port   = 80
