@@ -8,7 +8,6 @@ resource "aws_instance" "day4_ec2" {
   for_each = data.aws_availability_zones.zones.names
   availability_zone = each.key
   vpc_security_group_ids = [ aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id ]
-  count = 2
   tags = {
     "Name" = "for-each-Demo-${each.value}"
   }
