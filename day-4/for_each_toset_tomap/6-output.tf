@@ -17,7 +17,7 @@ output "IPs_map2" {
 }
 
 # Output - Splat operator
-output "IPs_splat" {
-  description = "IP address using splat operator"
-  value = aws_instance.day4_ec2[*].public_ip
-}
+# output "IPs_splat" {
+#   description = "IP address using splat operator"
+#   value = aws_instance.day4_ec2[*].public_ip
+# }
