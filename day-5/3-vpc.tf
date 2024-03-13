@@ -13,7 +13,7 @@ module "vpc" {
   # Database Subnets
   create_database_subnet_group = true
   create_elasticache_subnet_route_table = true
-  database_subnets = ["10.10.5.0/16", "10.10.6.0/16"]
+  database_subnets = ["10.10.5.0/24", "10.10.6.0/24"]
 
   # NAt Gateway - Outbound communication
   enable_nat_gateway = true
