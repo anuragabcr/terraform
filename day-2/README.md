@@ -8,17 +8,6 @@ Before getting started, ensure that you have Terraform and AWS CLI installed on 
 ## Step 1: Create a Terraform file
 Create a Terraform configuration file (e.g., `simpleWeb.tf`) with the following contents:
 ```
-# Provisioning an HTTP Server on EC2 with Terraform
-
-This walkthrough provides a step-by-step guide to provisioning an AWS EC2 instance, creating and configuring a security group to allow HTTP traffic, and installing the Apache Web Server to host a simple website using Terraform.
-
-## Prerequisites
-Before getting started, ensure that you have Terraform and AWS CLI installed on your local system.
-
-## Step 1: Create a Terraform file
-Create a Terraform configuration file (e.g., `simpleWeb.tf`) with the following contents:
-
-```hcl
 terraform {
   required_version = ">= 0.12"
 
