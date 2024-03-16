@@ -2,7 +2,7 @@
 resource "aws_iam_policy" "s3_read" {
   name = "S3_User"
   policy = <<EOF
-    {
+{
     "Version": "2012-10-17",
     "Statement": [
         {
