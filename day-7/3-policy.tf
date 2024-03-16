@@ -7,19 +7,16 @@ resource "aws_s3_bucket_public_access_block" "terraform-demo" {
 # S3 public Read policy
 resource "aws_s3_bucket_policy" "open_access" {
   bucket = aws_s3_bucket.terraform-demo-43234.id
-  policy = <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": [
-                "arn:aws:s3:::terraform-demo-43234/*"
-            ]
-        }
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = "*"
+        Action = "s3:GetObject"
+        Resource = "${aws_s3_bucket.terraform-demo-43234.arn}/*"
+      }
     ]
-}
-  EOF
+  })
 }
