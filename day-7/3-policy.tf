@@ -16,7 +16,7 @@ resource "aws_s3_bucket_policy" "open_access" {
             "Principal": "*",
             "Action": "s3:GetObject",
             "Resource": [
-                "arn:aws:s3:::terraform-demo-43234"
+                "arn:aws:s3:::terraform-demo-43234/*"
             ]
         }
     ]
