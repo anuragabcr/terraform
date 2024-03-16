@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "terraform-demo-43234" {
 # Upload file to S3
 resource "aws_s3_object" "terraform_index" {
   bucket = aws_s3_bucket.terraform-demo-43234.id
-  key = "html"
+  key = "index.html"
   source = "index.html"
   etag = filemd5("index.html")
 }
