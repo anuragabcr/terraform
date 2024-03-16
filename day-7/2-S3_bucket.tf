@@ -1,5 +1,5 @@
 # Create S3 Bucket
-resource "aws_s3_bucket" "S3_demo" {
+resource "aws_s3_bucket" "terraform-demo-43234" {
   bucket = "terraform_demo_43234"
 }
 
