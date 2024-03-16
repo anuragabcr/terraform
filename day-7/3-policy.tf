@@ -2,6 +2,7 @@
 resource "aws_s3_bucket_public_access_block" "terraform-demo" {
     bucket = aws_s3_bucket.terraform-demo-43234.id
   block_public_acls = false
+  block_public_policy = false
 }
 
 # S3 public Read policy
