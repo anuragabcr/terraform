@@ -13,7 +13,7 @@ resource "aws_s3_object" "terraform_index" {
 
 # S3 Web hosting
 resource "aws_s3_bucket_website_configuration" "terraform_hosting" {
-  bucket = aws_s3_bucket.name.id
+  bucket = aws_s3_bucket.S3_demo.id
 
   index_document {
     suffix = "index.html"
