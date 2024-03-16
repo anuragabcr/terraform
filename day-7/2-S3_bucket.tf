@@ -1,6 +1,6 @@
 # Create S3 Bucket
 resource "aws_s3_bucket" "terraform-demo-43234" {
-  bucket = "terraform_demo_43234"
+  bucket = "terraform-demo-43234"
 }
 
 # Upload file to S3
